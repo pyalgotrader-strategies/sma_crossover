@@ -32,6 +32,13 @@ class Strategy(Strategy_Protocol):
             lambda data: ta.sma(data.close, 50),
         )
 
+    @property
+    def adx_14(self):
+        return self.instrument.add_indicator(
+            "adx_14",
+            lambda data: ta.adx(data.high, data.low, data.close, 14),
+        )
+
     async def next(self) -> None:
         sma_signal = None
         adx_signal = None
