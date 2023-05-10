@@ -39,7 +39,7 @@ class Strategy(Strategy_Protocol):
         if self.sma_20.data["SMA_20"][-1] > self.sma_50.data["SMA_50"][-1]:
             sma_signal = "long"
 
-        if self.sma_20.data["SMA_20"][-1] < self.sma_20.data["SMA_50"][-1]:
+        if self.sma_20.data["SMA_20"][-1] < self.sma_50.data["SMA_50"][-1]:
             sma_signal = "short"
 
         if self.adx_14.data["ADX_14"][-2] > 20 and self.adx_14.data["ADX_14"][-1] > 20:
